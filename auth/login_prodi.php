@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+
 include 'koneksi.php';
 // ini untuk method POST
 if (isset($_POST['username'])) {
@@ -18,7 +18,9 @@ if (isset($_POST['username'])) {
             $_SESSION['role'] = "mahasiswa";
             header("Location: index.php");
         } else {
-            echo "<script>alert('Login gagal. Silakan periksa username dan password Anda.');</script>";
+            echo "<script>
+            alert('Login gagal. Silakan periksa username dan password Anda.');
+            </script>";
         }
     } else {
         $excute = $koneksi->query("SELECT * FROM prodi where username='$username' and password='$password'");
@@ -53,7 +55,7 @@ if (isset($_POST['username'])) {
 <body>
 
     <form action="" method="POST" class="login-form">
-        <h1>Halaman login</h1>
+        <h1>Halaman Masuk</h1>
 
         <input type="text" name="username" placeholder="masukkan username">
         <input type="password" name="password" placeholder="masukkan password">

@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-include 'koneksi.php';
+include '../koneksi.php';
 // ini untuk method POST
 if (isset($_POST['nama'])) {
     $nama = $_POST['nama'];
@@ -27,7 +27,7 @@ if (isset($_POST['nama'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/register.css">
+    <link rel="stylesheet" href="../style/register.css">
     <title>Halaman Register</title>
 </head>
 
@@ -42,7 +42,7 @@ if (isset($_POST['nama'])) {
         <input type="password" name="password" placeholder="masukkan password">
 
         <button type="submit">Submit</button>
-        <p>sudah punya akun? <a href="login.php">login</a></p>
+        <p>sudah punya akun? <a href="login_mahasiswa.php">login</a></p>
     </form>
 
 
