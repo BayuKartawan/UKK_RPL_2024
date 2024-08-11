@@ -40,12 +40,16 @@ if ($_SESSION['role'] == "prodi") {
 
 <body>
     <a href="logout.php">logout</a>
+
+    <!-- mahasiswa -->
     <?php if ($_SESSION['role'] == "mahasiswa"): ?>
         <form action="" method="post">
             <h1>Ajukan skripsi</h1>
             <textarea name="topik_skripsi" id="" row="5">Masukan judul</textarea>
             <button type="submit">submit</button>
         </form>
+
+    <!-- prodi  -->
     <?php else: ?>
         <h1>Daftar skrispi</h1>
         <table border="1">

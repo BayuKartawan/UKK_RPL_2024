@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 session_start();
 include 'koneksi.php';
@@ -9,7 +9,7 @@ if (isset($_POST['nama'])) {
     $password = $_POST['password'];
 
     $excute = $koneksi->query("INSERT INTO mahasiswa (nama, username, password) VALUES ('$nama', '$username', '$password')");
-  
+
     if ($excute) {
         echo "<script>
         alert('Regsiter berhasil');
@@ -23,27 +23,29 @@ if (isset($_POST['nama'])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/register.css">
-    <title>Halaman Login</title>
+    <title>Halaman Register</title>
 </head>
 
 <body>
-    
 
-<form action="" method="POST">
-<h1 class="title">Halaman Register</h1>
 
-    <input type="text" name="nama" placeholder="masukkan name"> 
-    <input type="text" name="username" placeholder="masukkan username"> 
-    <input type="password" name="password" placeholder="masukkan password">
+    <form action="" method="POST" class="register-form">
+        <h1>Halaman Register</h1>
 
-    <button type="submit">Submit</button>
-    <p>sudah punya akun? <a href="login.php">login</a></p>
-</form>
+        <input type="text" name="nama" placeholder="masukkan name">
+        <input type="text" name="username" placeholder="masukkan username">
+        <input type="password" name="password" placeholder="masukkan password">
+
+        <button type="submit">Submit</button>
+        <p>sudah punya akun? <a href="login.php">login</a></p>
+    </form>
 
 
 </body>
+
 </html>

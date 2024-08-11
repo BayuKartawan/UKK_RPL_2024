@@ -18,7 +18,7 @@ if (isset($_POST['username'])) {
             $_SESSION['role'] = "mahasiswa";
             header("Location: index.php");
         } else {
-            echo "login gagal";
+            echo "<script>alert('Login gagal. Silakan periksa username dan password Anda.');</script>";
         }
     } else {
         $excute = $koneksi->query("SELECT * FROM prodi where username='$username' and password='$password'");
@@ -31,7 +31,7 @@ if (isset($_POST['username'])) {
             $_SESSION['role'] = "prodi";
             header("Location: index.php");
         } else {
-            echo "login gagal";
+            echo "<script>alert('Login gagal. Silakan periksa username dan password Anda.');</script>";
         }
     }
 
@@ -52,8 +52,8 @@ if (isset($_POST['username'])) {
 
 <body>
 
-    <form action="" method="POST">
-        <h1 class="title">Halaman login</h1>
+    <form action="" method="POST" class="login-form">
+        <h1>Halaman login</h1>
 
         <input type="text" name="username" placeholder="masukkan username">
         <input type="password" name="password" placeholder="masukkan password">
@@ -61,9 +61,9 @@ if (isset($_POST['username'])) {
             <option value="prodi">prodi</option>
             <option value="mahasiswa">mahasiswa</option>
         </select>
-
         <button type="submit">Submit</button>
         <p>Belum punya akun? <a href="register.php">register</a></p>
+
     </form>
 
 </body>
